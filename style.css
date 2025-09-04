@@ -136,7 +136,9 @@ header .container {
 /* CTA section below hero */
 .cta-section {
     background-color: var(--color-bg);
-    padding: 2rem 0 1rem;
+    /* Reduce vertical spacing above and below the booking button to bring it closer
+       to the hero image (about 50% of its previous value) */
+    padding: 1rem 0 0.5rem;
     text-align: center;
 }
 .cta-section .big-cta {
@@ -156,14 +158,16 @@ header .container {
 /* Social icons under services: enlarge and adjust spacing */
 .social-links {
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    /* Reduce bottom margin to bring the About section closer (about 60% closer than before) */
+    margin-bottom: 1.2rem;
     display: flex;
     justify-content: center;
     gap: 2rem;
 }
 .social-links img {
-    width: 60px;
-    height: 60px;
+    /* Increase social icon size by roughly 15% for better visibility */
+    width: 69px;
+    height: 69px;
     transition: transform 0.2s ease-in-out;
 }
 .social-links a:hover img {
@@ -175,22 +179,33 @@ header .container {
    automatically centers itself within the container and uses a generous
    border radius for a card-like feel.  The spacing between images is
    increased for a cleaner, more balanced presentation. */
+/* Reviews layout: show review cards side-by-side on wider screens and stacked on mobile. */
 .reviews-grid {
     margin-top: 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     gap: 2.5rem;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .reviews-grid img {
     width: 100%;
+    /* Size of each review card reduced by about 35% compared to the original 650px */
     max-width: 425px;
     height: auto;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .reviews-grid {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .menu-toggle span {
@@ -232,6 +247,11 @@ header .container {
 @media (max-width: 768px) {
     .hero-img {
         object-fit: contain;
+    }
+    /* Reduce hero height on mobile so the booking button appears without excessive scrolling */
+    .hero {
+        height: 60vh;
+        min-height: 0;
     }
 }
 
@@ -285,6 +305,18 @@ section h2 {
     font-weight: 700;
     margin-bottom: 1.5rem;
     text-align: center;
+}
+
+/* Adjust spacing between sections on both desktop and mobile.  The About
+   section sits closer to the social icons and the Contacts section sits
+   closer to the Hours block by overriding the default section padding. */
+.about {
+    padding-top: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.contact {
+    padding-top: 0.8rem;
 }
 
 /* About section */
@@ -486,6 +518,14 @@ section {
 .contact-row a:hover {
     color: var(--color-secondary);
     border-bottom-color: transparent;
+}
+
+/* Center-align all contact details for consistency on mobile and desktop */
+.contact .container {
+    text-align: center;
+}
+.contact-row {
+    justify-content: center;
 }
 
 /* On very small screens, stack the label and value vertically for better readability */
