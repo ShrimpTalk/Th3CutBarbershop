@@ -162,7 +162,7 @@ header .container{
 }
 
 .about p{
-  max-width:750px;
+  max-width:680px;
   margin:0 auto 1.25rem;
   font-size:1.08rem;
   line-height:1.75;
@@ -231,7 +231,7 @@ header .container{
 
 /* ---------- Contact ---------- */
 .contact p{
-  text-align:center;
+  text-align:left;
   font-size:1.1rem;
   margin:.25rem 0;
 }
