@@ -189,7 +189,7 @@ section h2 {
 
 /* About section */
 .about p {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     font-size: 1.1rem;
     line-height: 1.7;
