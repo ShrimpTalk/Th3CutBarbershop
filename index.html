@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Th3 Cut Barbershop | Jacksonville, FL</title>
+    <!-- Google Font for a modern, friendly aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <!-- Barbershop logo. Replace the file in images/logo.png to update -->
+                <img src="images/logo.png" alt="Th3 Cut Barbershop logo" id="site-logo">
+            </a>
+            <nav id="nav" class="nav">
+                <ul>
+                    <!-- Social icons inserted into the navigation bar -->
+                    <li class="nav-icon">
+                        <a href="https://instagram.com/th3cut" target="_blank" rel="noopener" aria-label="Instagram">
+                            <img src="images/instagram.png" alt="Instagram" />
+                        </a>
+                    </li>
+                    <li class="nav-icon">
+                        <a href="https://www.facebook.com/Th3CutBarbershop" target="_blank" rel="noopener" aria-label="Facebook">
+                            <img src="images/facebook.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <!-- Standard section links -->
+                    <li><a href="#about" data-scroll>About</a></li>
+                    <li><a href="#services" data-scroll>Why&nbsp;Choose&nbsp;Us</a></li>
+                    <li><a href="#contact" data-scroll>Contact</a></li>
+                    <li><a href="https://getsquire.pro/j-mcclellan" target="_blank" class="book-now-link" rel="noopener">Book Now</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger button appears on small screens -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero section with the provided artwork as the background. The content sits underneath the logo in the artwork. -->
+    <section class="hero" role="banner" aria-label="Th3 Cut hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <!-- No description over the hero image; content intentionally left blank -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-action button placed below the hero image and above the reviews section -->
+    <section class="cta-section">
+        <div class="container">
+            <a href="https://getsquire.pro/j-mcclellan" class="cta-btn big-cta" target="_blank" rel="noopener">Book Your Cut</a>
+        </div>
+    </section>
+
+    <!-- Reviews section (formerly Why Choose Us) moved above About and populated with review images -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Why&nbsp;Choose&nbsp;Us</h2>
+            <!-- Replace the original service blocks with images of customer reviews -->
+            <div class="reviews-grid">
+                <img src="images/images-review-rosette.png" alt="Customer review 1" class="review-img">
+                <img src="images/images-review-mistral.png" alt="Customer review 2" class="review-img">
+                <img src="images/images-review-roberts.png" alt="Customer review 3" class="review-img">
+            </div>
+            <!-- Social links remain below the reviews -->
+            <div class="social-links">
+                <a href="https://instagram.com/th3cut" target="_blank" aria-label="Visit our Instagram">
+                    <img src="images/instagram.png" alt="Instagram logo">
+                </a>
+                <a href="https://www.facebook.com/Th3CutBarbershop" target="_blank" aria-label="Visit our Facebook">
+                    <img src="images/facebook.png" alt="Facebook logo">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section moved below reviews -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About&nbsp;Us</h2>
+            <p>
+                Th3&nbsp;Cut Barbershop in Jacksonville, Florida is more than a chair—it’s a place where good energy and great cuts come together.
+                Our barbers specialize in precision fades, beard trims and modern styles. The vibe is relaxed and professional, so every visit feels easy.
+            </p>
+
+            <!-- Business Hours -->
+            <div class="hours" aria-label="Business hours">
+                <h3>Hours</h3>
+                <table>
+                    <tr><td>Monday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Tuesday</td><td>Closed</td></tr>
+                    <tr><td>Wednesday</td><td>Closed</td></tr>
+                    <tr><td>Thursday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Friday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Saturday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Sunday</td><td>9 AM – 6 PM</td></tr>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section with email and phone information.  Each line uses
+         a flexible row layout so the label and value sit next to each
+         other on larger screens and stack gracefully on smaller screens. -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contacts</h2>
+            <p class="contact-row">
+                <span>Email:</span>
+                <a href="mailto:thecutbarbershop2020@gmail.com">thecutbarbershop2020@gmail.com</a>
+            </p>
+            <p class="contact-row">
+                <span>Phone:</span>
+                <a href="tel:9044725545">(904) 472‑5545</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy;&nbsp;<span id="year"></span>&nbsp;Th3&nbsp;Cut Barbershop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
