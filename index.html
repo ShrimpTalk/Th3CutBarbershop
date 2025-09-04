@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Th3 Cut Barbershop | Jacksonville, FL</title>
+    <!-- Google Font for a modern, friendly aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with logo and navigation -->
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <!-- Barbershop logo. Replace the file in images/logo.png to update -->
+                <img src="images/logo.png" alt="Th3 Cut Barbershop logo" id="site-logo">
+            </a>
+            <nav id="nav" class="nav">
+                <ul>
+                    <!-- data-scroll indicates smooth scrolling without altering the URL -->
+                    <li><a href="#about" data-scroll>About</a></li>
+                    <li><a href="#services" data-scroll>Why&nbsp;Choose&nbsp;Us</a></li>
+                    <li><a href="#contact" data-scroll>Contact</a></li>
+                    <li><a href="https://getsquire.pro/j-mcclellan" target="_blank" class="book-now-link" rel="noopener">Book Now</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburger button appears on small screens -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero section with the provided artwork as the background. The content sits underneath the logo in the artwork. -->
+    <section class="hero" role="banner" aria-label="Th3 Cut hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <!-- Remove separate logo; instead include a simple tagline and call to action -->
+                <p class="hero-tagline">Jacksonville’s barbershop for professional fades, precision detail and a cut that speaks for itself.</p>
+                <a href="https://getsquire.pro/j-mcclellan" class="cta-btn" target="_blank" rel="noopener">Book Your Cut</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section describing the barbershop -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About&nbsp;Th3&nbsp;Cut</h2>
+            <p>
+                Th3&nbsp;Cut Barbershop in Jacksonville, Florida is more than a chair — it’s a place where good energy and great cuts come together.
+                Our barbers specialize in precision fades, beard trims and modern styles. The vibe is relaxed and professional, so every visit feels easy.
+            </p>
+
+            <!-- Business Hours and phone number -->
+            <div class="hours" aria-label="Business hours">
+                <h3>Hours</h3>
+                <table>
+                    <tr><td>Monday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Tuesday</td><td>Closed</td></tr>
+                    <tr><td>Wednesday</td><td>Closed</td></tr>
+                    <tr><td>Thursday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Friday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Saturday</td><td>9 AM – 6 PM</td></tr>
+                    <tr><td>Sunday</td><td>9 AM – 6 PM</td></tr>
+                </table>
+                <p class="phone">Phone: <a href="tel:9044725545">(904) 472‑5545</a></p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services/Features section highlighting why customers should choose Th3 Cut -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Why&nbsp;Choose&nbsp;Us</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Expert Barbers</h3>
+                    <p>Our talented team stays up to date with the latest trends and techniques to ensure you look your best. From classic cuts to contemporary styles, we’ve got you covered.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Urban Ambiance</h3>
+                    <p>The shop’s graffiti art and modern décor create an inspiring atmosphere unlike any other. It’s a space where creativity and craft thrive.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Easy Booking</h3>
+                    <p>Scheduling your appointment is simple. Click the booking link and choose a time that works for you — no phone call required.</p>
+                </div>
+            </div>
+            <!-- Social media links using official logos -->
+            <div class="social-links">
+                <a href="https://instagram.com/th3cut" target="_blank" aria-label="Visit our Instagram">
+                    <img src="images/instagram.png" alt="Instagram logo">
+                </a>
+                <a href="https://www.facebook.com/Th3CutBarbershop" target="_blank" aria-label="Visit our Facebook">
+                    <img src="images/facebook.png" alt="Facebook logo">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section with email info -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>Email us at <a href="mailto:thecutbarbershop2020@gmail.com">thecutbarbershop2020@gmail.com</a> if you have any questions.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy;&nbsp;<span id="year"></span>&nbsp;Th3&nbsp;Cut Barbershop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
