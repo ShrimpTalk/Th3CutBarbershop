@@ -171,19 +171,26 @@ header .container {
 }
 
 /* Reviews grid: used to display customer review screenshots */
+/* Reviews layout: images stacked in a column and centered.  Each image
+   automatically centers itself within the container and uses a generous
+   border radius for a card-like feel.  The spacing between images is
+   increased for a cleaner, more balanced presentation. */
 .reviews-grid {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
 }
+
 .reviews-grid img {
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .menu-toggle span {
@@ -194,26 +201,47 @@ header .container {
     border-radius: 2px;
 }
 
-/* Hero section */
+/* Hero section
+   Use a positioned container with an <img> that fills the space.  The
+   image uses object-fit so it can either cover the container on larger
+   screens or contain the entire artwork on smaller screens without
+   cropping the edges. */
 .hero {
-    height: 80vh;
-    /* Use the latest compressed artwork uploaded by the user */
-    background-image: url("images/hero-bg-new.jpg");
-    background-size: cover;
-    background-position: center;
     position: relative;
+    height: 80vh;
+    min-height: 520px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* The actual hero artwork image.  By default it fills the hero and
+   covers it for a dramatic look.  On small screens the object-fit
+   switches to contain so the entire artwork remains visible. */
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    .hero-img {
+        object-fit: contain;
+    }
+}
+
+/* Transparent overlay that sits above the hero image. */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Make overlay transparent so the hero image is not darkened */
     background: rgba(0, 0, 0, 0);
     display: flex;
     align-items: center;
@@ -435,6 +463,15 @@ section {
     flex-wrap: wrap;
     text-align: center;
 }
+
+/* On very small screens, stack the label and value vertically for better readability */
+@media (max-width: 480px) {
+    .contact-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+    }
+}
 .contact-row span {
     font-weight: 600;
     color: var(--color-primary);
@@ -457,17 +494,5 @@ section {
         flex-direction: column;
         align-items: center;
         gap: 0.2rem;
-    }
-}
-
-/* Mobile-specific adjustments for the hero image.  On narrow screens the
-   background image is contained to prevent cropping of important parts
-   and the height is reduced so the entire image remains visible. */
-@media (max-width: 768px) {
-    .hero {
-        height: 60vh;
-        background-size: contain;
-        background-position: top center;
-        background-repeat: no-repeat;
     }
 }
