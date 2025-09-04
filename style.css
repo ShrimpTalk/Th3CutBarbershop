@@ -1,0 +1,386 @@
+/*
+ * Global styles for Th3 Cut Barbershop website
+ *
+ * The design uses a dark canvas with pops of color inspired by the graffiti
+ * background. Layouts are responsive and optimized for mobile viewing.
+ */
+
+/* CSS variables for easy theming */
+:root {
+    --color-bg: #0f0f0f;
+    --color-card: #1b1b1b;
+    --color-primary: #e76f51; /* warm accent colour used for buttons */
+    --color-secondary: #2a9d8f; /* complimentary tone */
+    --color-text: #ffffff;
+    --max-width: 1200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Containers keep content centered and limited in width */
+.container {
+    width: 90%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header styles */
+header {
+    width: 100%;
+    background-color: rgba(15, 15, 15, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo placeholder; to be replaced by actual logo when provided */
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Navigation menu */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav li {
+    font-weight: 600;
+}
+
+.nav a {
+    color: var(--color-text);
+    padding: 0.5rem 0;
+}
+
+.nav a.book-now-link {
+    background-color: var(--color-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--color-bg);
+    font-weight: 600;
+}
+
+.nav a.book-now-link:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Menu toggle (hamburger) styles */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-text);
+    border-radius: 2px;
+}
+
+/* Hero section */
+.hero {
+    height: 80vh;
+    /* Use the latest compressed artwork uploaded by the user */
+    background-image: url("images/hero-bg-new.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* The overlay darkens the hero image to improve text readability.
+       A slightly lower opacity allows some of the graffiti artwork to show through. */
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cta-btn:hover {
+    background-color: var(--color-secondary);
+}
+
+/* Sections */
+section {
+    padding: 3rem 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* About section */
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Services grid */
+.service-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 2rem;
+}
+
+.service-item {
+    background-color: var(--color-card);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.service-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.service-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.service-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #cccccc;
+}
+
+/* Social links */
+.social-links {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+
+/* Contact section */
+.contact p {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-card);
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Hide nav list and show toggle on small screens */
+    .nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(15, 15, 15, 0.98);
+        width: 200px;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease-in-out;
+    }
+    .nav ul {
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+    }
+    .nav li {
+        margin: 0.5rem 0;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    /* When nav is open */
+    .nav.open {
+        max-height: 300px;
+    }
+}
+
+/*---------------------------*/
+/* Additional styles for new features */
+/* Ensure sections don't hide behind the sticky header when anchor links scroll */
+section {
+    scroll-margin-top: 90px;
+}
+
+/* Hero tagline styling */
+.hero-content .hero-tagline {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #f5f5f5;
+    max-width: 800px;
+}
+
+/* Hours card */
+.hours {
+    margin: 2rem auto 0;
+    background: var(--color-card);
+    border-radius: 6px;
+    padding: 1.25rem 1rem;
+    max-width: 720px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hours h3 {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+}
+
+.hours table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.hours td {
+    padding: 0.35rem 0.25rem;
+}
+
+.hours td:first-child {
+    text-align: left;
+    opacity: 0.9;
+}
+.hours td:last-child {
+    text-align: right;
+    font-weight: 600;
+}
+
+.hours .phone {
+    text-align: center;
+    margin-top: 0.85rem;
+}
+
+.hours a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.hours a:hover {
+    color: var(--color-secondary);
+}
+
+/* Gallery section */
+.gallery .gallery-grid {
+    margin-top: 1rem;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.gallery .gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.gallery .gallery-grid img:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
