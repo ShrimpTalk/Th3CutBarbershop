@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Th3 Cut Barbershop | Jacksonville, FL</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <a href="#" class="logo" aria-label="Th3 Cut Barbershop home">
-        <img src="images/logo.png" alt="Th3 Cut Barbershop logo" id="site-logo" />
-      </a>
+<header>
+  <div class="container">
+    <a href="#" class="logo" aria-label="Th3 Cut Barbershop home">
+      <img src="images/logo.png" alt="Th3 Cut Barbershop logo" id="site-logo" />
+    </a>
 
-      <nav id="nav" class="nav" aria-label="Primary">
-        <ul>
-          <!-- data-scroll makes JS intercept and smooth-scroll without changing URL -->
-          <li><a href="#about" data-scroll>About</a></li>
-          <li><a href="#services" data-scroll>Why&nbsp;Choose&nbsp;Us</a></li>
-          <li><a href="#contact" data-scroll>Contact</a></li>
-          <li><a href="https://getsquire.pro/j-mcclellan" target="_blank" rel="noopener" class="book-now-link">Book Now</a></li>
-        </ul>
-      </nav>
+    <nav id="nav" class="nav">
+      <ul>
+        <!-- Social icons inserted into the navigation bar -->
+        <li class="nav-icon">
+          <a href="https://instagram.com/th3cut" target="_blank" rel="noopener" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram" />
+          </a>
+        </li>
+        <li class="nav-icon">
+          <a href="https://www.facebook.com/Th3CutBarbershop" target="_blank" rel="noopener" aria-label="Facebook">
+            <img src="images/facebook.png" alt="Facebook" />
+          </a>
+        </li>
+        <!-- Standard section links -->
+        <li><a href="#about" data-scroll>About</a></li>
+        <li><a href="#services" data-scroll>Why&nbsp;Choose&nbsp;Us</a></li>
+        <li><a href="#contact" data-scroll>Contact</a></li>
+        <li><a href="https://getsquire.pro/j-mcclellan" target="_blank" class="book-now-link" rel="noopener">Book Now</a></li>
+      </ul>
+    </nav>
 
-      <!-- Header social icons -->
-      <div class="header-social-links">
-        <a href="https://instagram.com/th3cut" target="_blank" rel="noopener" aria-label="Instagram">
-          <img src="images/instagram.png" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/Th3CutBarbershop" target="_blank" rel="noopener" aria-label="Facebook">
-          <img src="images/facebook.png" alt="Facebook" />
-        </a>
-      </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
   <!-- Hero -->
   <section class="hero" role="banner" aria-label="Th3 Cut hero">
