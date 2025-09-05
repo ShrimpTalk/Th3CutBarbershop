@@ -369,11 +369,49 @@ section h2 {
    will now apply globally to ensure the icons appear larger and are spaced evenly between
    the services section and the contacts section. */
 
-/* Contact section */
-.contact p {
-    text-align: center;
-    font-size: 1.1rem;
+/* Contact rows: 2-column grid keeps labels + values aligned on all screens */
+.contact-row {
+  display: grid;
+  grid-template-columns: auto 1fr; /* label | value */
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+  row-gap: .2rem;
+  margin: .25rem 0;
+  text-align: center;        /* keeps overall centered feel */
 }
+
+/* Label */
+.contact-row span {
+  font-weight: 600;
+  color: var(--color-primary);
+  white-space: nowrap;       /* don't break 'Email:' / 'Phone:' / 'Located:' */
+  justify-self: end;         /* align label toward the value */
+}
+
+/* Value */
+.contact-row a,
+.contact-row .value {
+  justify-self: start;       /* value sits just after the label */
+  min-width: 0;
+  overflow-wrap: anywhere;   /* wrap long email/address neatly if needed */
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.contact-row a:hover {
+  color: var(--color-secondary);
+  border-bottom-color: transparent;
+}
+
+/* Optional: tighten vertical spacing a hair on phones */
+@media (max-width: 480px) {
+  .contact-row {
+    row-gap: .15rem;
+  }
+}
+
 
 /* Footer */
 footer {
