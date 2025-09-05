@@ -113,6 +113,14 @@ header .container {
     cursor: pointer;
 }
 
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-text);
+    border-radius: 2px;
+}
+
 /* Navigation icons (Instagram and Facebook) placed at the start of the nav list */
 .nav-icon img {
     width: 26px;
@@ -174,53 +182,44 @@ header .container {
     transform: scale(1.1);
 }
 
-/* Reviews grid: used to display customer review screenshots */
-/* Reviews layout: images stacked in a column and centered.  Each image
-   automatically centers itself within the container and uses a generous
-   border radius for a card-like feel.  The spacing between images is
-   increased for a cleaner, more balanced presentation. */
-/* Reviews layout: show review cards side-by-side on wider screens and stacked on mobile. */
+/* =========================================================
+   REVIEWS GALLERY — stacked on mobile, side-by-side on desktop
+   (applies to both .reviews-gallery and existing .reviews-grid)
+   ========================================================= */
+.reviews-gallery,
 .reviews-grid {
     margin-top: 2rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;      /* stack by default (mobile) */
+    gap: 20px;
+    align-items: center;
     justify-content: center;
-    gap: 2.5rem;
-    flex-wrap: wrap;
-    align-items: flex-start;
 }
 
+.reviews-gallery img,
 .reviews-grid img {
-    width: 100%;
-    /* Size of each review card reduced by about 35% compared to the original 650px */
-    max-width: 425px;
+    max-width: 100%;
     height: auto;
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-    margin-left: auto;
-    margin-right: auto;
 }
 
-@media (max-width: 768px) {
+/* On larger screens, lay out in a row; images auto-fit nicely */
+@media (min-width: 768px) {
+    .reviews-gallery,
     .reviews-grid {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;     /* side-by-side on desktop */
+        flex-wrap: wrap;
+        gap: 2.5rem;
+    }
+    .reviews-gallery img,
+    .reviews-grid img {
+        /* 3 across by default; adjust to 45% for 2-up, 22% for 4-up, etc. */
+        max-width: 30%;
     }
 }
 
-.menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background-color: var(--color-text);
-    border-radius: 2px;
-}
-
-/* Hero section
-   Use a positioned container with an <img> that fills the space.  The
-   image uses object-fit so it can either cover the container on larger
-   screens or contain the entire artwork on smaller screens without
-   cropping the edges. */
+/* Hero section */
 .hero {
     position: relative;
     height: 80vh;
@@ -231,9 +230,7 @@ header .container {
     justify-content: center;
 }
 
-/* The actual hero artwork image.  By default it fills the hero and
-   covers it for a dramatic look.  On small screens the object-fit
-   switches to contain so the entire artwork remains visible. */
+/* The actual hero artwork image */
 .hero-img {
     position: absolute;
     top: 0;
@@ -298,6 +295,7 @@ header .container {
 /* Sections */
 section {
     padding: 3rem 0;
+    scroll-margin-top: 90px; /* ensure sticky header doesn't cover anchors */
 }
 
 section h2 {
@@ -307,9 +305,7 @@ section h2 {
     text-align: center;
 }
 
-/* Adjust spacing between sections on both desktop and mobile.  The About
-   section sits closer to the social icons and the Contacts section sits
-   closer to the Hours block by overriding the default section padding. */
+/* Adjust spacing between sections */
 .about {
     padding-top: 1.2rem;
     padding-bottom: 1rem;
@@ -319,7 +315,6 @@ section h2 {
     padding-top: 0.8rem;
 }
 
-/* About section */
 /* About section paragraph: narrower width for balanced line lengths */
 .about p {
     max-width: 600px;
@@ -359,218 +354,4 @@ section h2 {
 }
 
 .service-item p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #cccccc;
-}
-
-/* Social links */
-/* Removed duplicate social-links definition. The first definition above (with larger icons)
-   will now apply globally to ensure the icons appear larger and are spaced evenly between
-   the services section and the contacts section. */
-
-/* Contact rows: 2-column grid keeps labels + values aligned on all screens */
-.contact-row {
-  display: grid;
-  grid-template-columns: auto 1fr; /* label | value */
-  align-items: center;
-  justify-content: center;
-  column-gap: .5rem;
-  row-gap: .2rem;
-  margin: .25rem 0;
-  text-align: center;        /* keeps overall centered feel */
-}
-
-/* Label */
-.contact-row span {
-  font-weight: 600;
-  color: var(--color-primary);
-  white-space: nowrap;       /* don't break 'Email:' / 'Phone:' / 'Located:' */
-  justify-self: end;         /* align label toward the value */
-}
-
-/* Value */
-.contact-row a,
-.contact-row .value {
-  justify-self: start;       /* value sits just after the label */
-  min-width: 0;
-  overflow-wrap: anywhere;   /* wrap long email/address neatly if needed */
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.2);
-  transition: color .2s ease, border-color .2s ease;
-}
-
-.contact-row a:hover {
-  color: var(--color-secondary);
-  border-bottom-color: transparent;
-}
-
-/* Optional: tighten vertical spacing a hair on phones */
-@media (max-width: 480px) {
-  .contact-row {
-    row-gap: .15rem;
-  }
-}
-
-
-/* Footer */
-footer {
-    background-color: var(--color-card);
-    padding: 1rem 0;
-    text-align: center;
-    margin-top: auto;
-}
-
-footer p {
-    font-size: 0.85rem;
-    color: #888888;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    /* Hide nav list and show toggle on small screens */
-    .nav {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: rgba(15, 15, 15, 0.98);
-        width: 200px;
-        border-radius: 0 0 4px 4px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.3s ease-in-out;
-    }
-    .nav ul {
-        flex-direction: column;
-        padding: 0.5rem 1rem;
-    }
-    .nav li {
-        margin: 0.5rem 0;
-    }
-    .menu-toggle {
-        display: flex;
-    }
-    /* When nav is open */
-    .nav.open {
-        max-height: 300px;
-    }
-}
-
-/*---------------------------*/
-/* Additional styles for new features */
-/* Ensure sections don't hide behind the sticky header when anchor links scroll */
-section {
-    scroll-margin-top: 90px;
-}
-
-/* Hero tagline styling */
-.hero-content .hero-tagline {
-    font-size: clamp(1.2rem, 3vw, 1.6rem);
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-    color: #f5f5f5;
-    max-width: 800px;
-}
-
-/* Hours card */
-.hours {
-    margin: 2rem auto 0;
-    background: var(--color-card);
-    border-radius: 6px;
-    padding: 1.25rem 1rem;
-    /* Reduce width of the Hours card by roughly 30% to create a more compact appearance */
-    max-width: 500px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-.hours h3 {
-    text-align: center;
-    margin-bottom: 0.75rem;
-    color: var(--color-primary);
-}
-
-.hours table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
-
-.hours td {
-    padding: 0.35rem 0.25rem;
-}
-
-.hours td:first-child {
-    text-align: left;
-    opacity: 0.9;
-}
-.hours td:last-child {
-    text-align: right;
-    font-weight: 600;
-}
-
-.hours .phone {
-    text-align: center;
-    margin-top: 0.85rem;
-}
-
-.hours a {
-    color: var(--color-text);
-    text-decoration: none;
-}
-
-.hours a:hover {
-    color: var(--color-secondary);
-}
-
-/* Contact rows: display label and value side by side on larger screens,
-   but allow them to wrap gracefully on very narrow screens. */
-.contact-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-/* On very small screens, stack the label and value vertically for better readability */
-@media (max-width: 480px) {
-    .contact-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-    }
-}
-.contact-row span {
-    font-weight: 600;
-    color: var(--color-primary);
-}
-.contact-row a {
-    color: var(--color-text);
-    white-space: nowrap;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-.contact-row a:hover {
-    color: var(--color-secondary);
-    border-bottom-color: transparent;
-}
-
-/* Center-align all contact details for consistency on mobile and desktop */
-.contact .container {
-    text-align: center;
-}
-.contact-row {
-    justify-content: center;
-}
-
-/* On very small screens, stack the label and value vertically for better readability */
-@media (max-width: 480px) {
-    .contact-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-    }
-}
+    font-s
